@@ -150,24 +150,21 @@ footer {
     <p>&copy; 2024 PPL. All Rights Reserved.</p>
 </footer>
 <script>
-    // Get all carousel images
-    const carouselImages = document.querySelectorAll('.carousel-image');
-    let currentImageIndex = 0;
-
-    // Function to show next image in carousel
-    function showNextImage() {
-        carouselImages[currentImageIndex].classList.remove('active');
-        currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
-        carouselImages[currentImageIndex].classList.add('active');
-    }
-
-    // Hide all images except the first one
-    for (let i = 1; i < carouselImages.length; i++) {
-        carouselImages[i].classList.remove('active');
-    }
-
-    // Show the next image every 2 seconds
-    setInterval(showNextImage, 2000);
+   const images = [
+       './gas.jpg',
+        './oil.jpeg',
+        './gas1.jpg',
+        './oil.jpeg',
+      ];
+      let index = 0;
+      
+      function updateCarousel() {
+        document.getElementById('carousel').innerHTML = `<img src="${images[index]}" alt="carousel" />`;
+        index = (index + 1) % images.length;
+      }
+      
+      setInterval(updateCarousel, 2000);
+      
 
     // Contact form submission
     document.getElementById('contact-form').addEventListener('submit', function(e) {
