@@ -177,6 +177,45 @@ footer {
 .social img:hover {
   opacity: 0.7;
 }
+
+
+    .product-area {
+  overflow: hidden;
+}
+
+.product-slider {
+  display: flex;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  33.33% {
+    transform: translateX(-100%);
+  }
+  66.67% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.product-slide {
+  flex: 0 0 100%;
+  text-align: center;
+}
+
+.product-slide img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-slide p {
+  margin-top: 10px;
+}
   </style>
 </head>
 <body>
@@ -220,6 +259,23 @@ footer {
     </form>
 </section>
 
+<div class="product-area">
+  <div class="product-slider">
+    <div class="product-slide">
+      <img src="product1.jpg" alt="Product 1">
+      <p>Product 1 Description</p>
+    </div>
+    <div class="product-slide">
+      <img src="product2.jpg" alt="Product 2">
+      <p>Product 2 Description</p>
+    </div>
+    <div class="product-slide">
+      <img src="product3.jpg" alt="Product 3">
+      <p>Product 3 Description</p>
+    </div>
+  </div>
+</div>
+  
   
 <section class="video">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/-_BxnhLyuH8?si=-As6ZUaT0RiPTQly" frameborder="0" allowfullscreen></iframe>
@@ -239,6 +295,24 @@ footer {
   
   
 <script>
+// Function to create a product slider
+function createProductSlider() {
+  const productSlider = document.querySelector('.product-slider');
+  const productSlides = document.querySelectorAll('.product-slide');
+
+  // Duplicate the product slides for infinite scrolling
+  productSlides.forEach((slide, index) => {
+    const cloneSlide = slide.cloneNode(true);
+    productSlider.appendChild(cloneSlide);
+  });
+
+  // Set the width of the product slider to accommodate all slides
+  productSlider.style.width = `${productSlides.length * 100}%`;
+}
+
+createProductSlider();  // Call the function to create the product slider
+
+  
 document.getElementById('whatsapp-icon').addEventListener('click', function() {
   window.open('https://wa.me/+2348037720725" target="_blank" rel="noopener noreferrer');
 });
