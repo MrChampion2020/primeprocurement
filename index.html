@@ -105,9 +105,9 @@ footer {
       <p>Your First Choice In Procurement.</p></div>
     </div>
     <div class="carousel">
-      <img src="default.png" alt="ppl image">
-      <img src="cover.png" alt="ppl image">
-      <img src="default.png" alt=" ppl image">
+      <img src="default.png" alt="ppl image" class="carousel-image active">
+        <img src="cover.png" alt="ppl image" class="carousel-image">
+        <img src="default.png" alt="ppl image" class="carousel-image">
     </div>
   </header>
   <section class="contact-us">
@@ -133,6 +133,22 @@ footer {
     <p>&copy; 2024 PPL. All Rights Reserved.</p>
   </footer>
   <script src="scripts.js">
+
+     // Get all carousel images
+    const carouselImages = document.querySelectorAll('.carousel-image');
+    let currentImageIndex = 0;
+
+    // Function to show next image in carousel
+    function showNextImage() {
+        carouselImages[currentImageIndex].classList.remove('active');
+        currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+        carouselImages[currentImageIndex].classList.add('active');
+    }
+
+    // Show the next image every 2 seconds
+    setInterval(showNextImage, 2000);
+
+    
 
     document.getElementById('contact-form').addEventListener('submit', function(e) {
   e.preventDefault();
