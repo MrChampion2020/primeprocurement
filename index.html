@@ -108,18 +108,22 @@ header {
 }
   .contact-us h2{
  text-align: center;
- width: 50%;
+ width: 100%;
  margin: 0 auto;
+}
+.contact-us{
+  width: 50%;
+  height: 100%;
 }
 .contact-us form {
   display: flex;
   flex-wrap: wrap;
     flex: 1;
-  width: 50%;
+  width: 90%;
   height: 100%;
 }
 .contact-us input{
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   margin-bottom: 10px;
   border-radius: 10px;
@@ -218,7 +222,9 @@ footer {
   </div>
     
   <section class="contact-us">
+    
   <h2>Contact Us</h2>
+    
     <form id="contact-form">
       
       <input type="text" id="name" name="name" placeholder="Full Name" required>
@@ -226,7 +232,9 @@ footer {
       <input type="email" id="email" name="email" placeholder="Email" required>
     
       <textarea id="message" name="message" placeholder="Send us a message" required></textarea>
+      
       <button type="submit">Submit</button>
+      
     </form>
 </section>
 
