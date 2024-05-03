@@ -139,32 +139,33 @@ header {
   border-radius: 10px;
 }
 footer {
-  background-color: black;
-  color: white;
-  width: 100%;
-  height: 10vh;
-  display: flex;
-  flex-direction: column;
-}
-.social {
-  width: 100%;
-  height: 90%;
-  margin: 0 auto;
-}
-.social a .img img{
-  object-fit: cover;
-  margin: 0 auto;
-  width: 20%;
-  height: 50%
-  
-}
-.copyright{
-  width: 100%;
-  height: 10%
-  color: white;
+  background-color: #333;
+  color: #fff;
   text-align: center;
+  padding: 20px;
 }
-    
+
+.social {
+  margin-bottom: 20px;
+}
+
+.social a {
+  display: inline-block;
+  margin: 0 10px;
+  border-radius: 50%;
+}
+
+.social img {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.social img:hover {
+  opacity: 0.7;
+}
   </style>
 </head>
 <body>
@@ -202,8 +203,18 @@ footer {
 <section class="video">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/-_BxnhLyuH8?si=-As6ZUaT0RiPTQly" frameborder="0" allowfullscreen></iframe>
 </section>
+
+
+  <footer>
+  <div class="social">
+    <a href="#" id="whatsapp-icon"><img src="whatsappwhite.png" alt="WhatsApp"></a>
+    <a href="#" id="email-icon"><img src="msg.png" alt="Email"></a>
+  </div>
+  <p> &copy; 2024 Prime Procurement Ltd </p>
+</footer>
+
   
-<footer>
+  <!--<footer>
   
     <div class="social">
       
@@ -218,9 +229,17 @@ footer {
     
   </div>
    
-</footer>
+</footer>-->
   
 <script>
+document.getElementById('whatsapp-icon').addEventListener('click', function() {
+  window.open('https://wa.me/+2348037720725" target="_blank" rel="noopener noreferrer');
+});
+
+document.getElementById('email-icon').addEventListener('click', function() {
+  window.open('mailto:info.primeprocurementus.com', '_blank');
+});
+  
    const images = [
        './gas.jpg',
         './oil.jpeg',
