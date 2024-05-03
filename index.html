@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="./logo.png" type="image/png">
+<link rel="icon" href="./logo.png" type="image/png">
 <title>Prime Procurement Ltd</title>
 <link rel="stylesheet" href="styles.css">
   <style>
@@ -95,22 +95,23 @@ footer {
   </style>
 </head>
 <body>
-  <header>
+<header>
     <div class="company-info">
-      <div class="logo">
-        <img src="logo.png" alt="ppl Logo">
-      </div>
-     <div class="companydesc"> 
-       <h1>Prime Procurement</h1>
-      <p>Your First Choice In Procurement.</p></div>
+        <div class="logo">
+            <img src="logo.png" alt="ppl Logo">
+        </div>
+        <div class="companydesc">
+            <h1>Prime Procurement</h1>
+            <p>Your First Choice In Procurement.</p>
+        </div>
     </div>
     <div class="carousel">
-      <img src="default.png" alt="ppl image" class="carousel-image active">
+        <img src="default.png" alt="ppl image" class="carousel-image active">
         <img src="cover.png" alt="ppl image" class="carousel-image">
         <img src="default.png" alt="ppl image" class="carousel-image">
     </div>
-  </header>
-  <section class="contact-us">
+</header>
+<section class="contact-us">
     <h2>Contact Us</h2>
     <form id="contact-form">
       <label for="name">Name:</label>
@@ -121,20 +122,19 @@ footer {
       <textarea id="message" name="message" required></textarea>
       <button type="submit">Submit</button>
     </form>
-  </section>
-  <section class="video">
+</section>
+<section class="video">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_HERE" frameborder="0" allowfullscreen></iframe>
-  </section>
-  <footer>
+</section>
+<footer>
     <div class="social">
-      <a href="https://wa.me/+2348037720725" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-      <a href="mailto:info.primeprocurementus.com">Email</a>
+        <a href="https://wa.me/+2348037720725" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="mailto:info.primeprocurementus.com">Email</a>
     </div>
     <p>&copy; 2024 PPL. All Rights Reserved.</p>
-  </footer>
-  <script src="scripts.js">
-
-     // Get all carousel images
+</footer>
+<script>
+    // Get all carousel images
     const carouselImages = document.querySelectorAll('.carousel-image');
     let currentImageIndex = 0;
 
@@ -145,30 +145,33 @@ footer {
         carouselImages[currentImageIndex].classList.add('active');
     }
 
+    // Hide all images except the first one
+    for (let i = 1; i < carouselImages.length; i++) {
+        carouselImages[i].classList.remove('active');
+    }
+
     // Show the next image every 2 seconds
     setInterval(showNextImage, 2000);
 
-    
-
+    // Contact form submission
     document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  var form = e.target;
-  var formData = new FormData(form);
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://docs.google.com/forms/d/e/1FAIpQLSf4yC-rhIl9awXmujgyARJMo82mmgcqcBtAHlCGfLmOvtAflQ/viewform?usp=pp_url', true);
-  xhr.setRequestHeader('Accept', 'application/json');
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState !== XMLHttpRequest.DONE) return;
-    if (xhr.status === 200) {
-      form.reset();
-      alert('Thank you for your message!');
-    } else {
-      alert('There was a problem submitting your form.');
-    }
-  };
-  xhr.send(formData);
-});
-
-  </script>
+        e.preventDefault();
+        var form = e.target;
+        var formData = new FormData(form);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://docs.google.com/forms/d/e/1FAIpQLSf4yC-rhIl9awXmujgyARJMo82mmgcqcBtAHlCGfLmOvtAflQ/viewform?usp=pp_url', true);
+        xhr.setRequestHeader('Accept', 'application/json');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState !== XMLHttpRequest.DONE) return;
+            if (xhr.status === 200) {
+                form.reset();
+                alert('Thank you for your message!');
+            } else {
+                alert('There was a problem submitting your form.');
+            }
+        };
+        xhr.send(formData);
+    });
+</script>
 </body>
 </html>
