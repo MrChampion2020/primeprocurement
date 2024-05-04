@@ -180,6 +180,8 @@ footer {
 
 
     .product-area {
+      width: 90%;
+      height: 20%;
   overflow: hidden;
 }
 
@@ -206,11 +208,13 @@ footer {
 .product-slide {
   flex: 0 0 100%;
   text-align: center;
+  width: 100%;
+  height: 10%;
 }
 
 .product-slide img {
   max-width: 100%;
-  height: auto;
+  height: 100px;
 }
 
 .product-slide p {
@@ -260,20 +264,28 @@ footer {
 </section>
 
 <div class="product-area">
+  
   <div class="product-slider">
+    
     <div class="product-slide">
+      
       <img src="bolt.jpg" alt="Product 1">
       <p>Bolts and Nuts</p>
     </div>
+    
     <div class="product-slide">
       <img src="gasket.jpg" alt="Product 2">
       <p>gaskets</p>
     </div>
+    
     <div class="product-slide">
       <img src="valves.jpg" alt="Product 3">
       <p>Valves</p>
+      
     </div>
+    
   </div>
+  
 </div>
   
   
@@ -312,6 +324,8 @@ function createProductSlider() {
 
 createProductSlider();  // Call the function to create the product slider
 
+
+  
   
 document.getElementById('whatsapp-icon').addEventListener('click', function() {
   window.open('https://wa.me/+2348037720725" target="_blank" rel="noopener noreferrer');
