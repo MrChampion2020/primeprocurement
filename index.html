@@ -390,23 +390,27 @@ document.getElementById('email-icon').addEventListener('click', function() {
 
     // Contact form submission
     document.getElementById('contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        var form = e.target;
-        var formData = new FormData(form);
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://docs.google.com/forms/d/e/1FAIpQLSf4yC-rhIl9awXmujgyARJMo82mmgcqcBtAHlCGfLmOvtAflQ/viewform?usp=pp_url', true);
-        xhr.setRequestHeader('Accept', 'application/json');
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState !== XMLHttpRequest.DONE) return;
-            if (xhr.status === 200) {
-                form.reset();
-                alert('Thank you for your message!');
-            } else {
-                alert('There was a problem submitting your form.');
-            }
-        };
-        xhr.send(formData);
+    e.preventDefault();
+    var form = e.target;
+    var formData = new FormData(form);
+
+    fetch('http://localhost:3000/submit-form', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            form.reset();
+            alert('Thank you for your message!');
+        } else {
+            alert('There was a problem submitting your form.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was a problem submitting your form.');
     });
+});
 </script>
 </body>
 </html>
